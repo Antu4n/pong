@@ -89,11 +89,13 @@ function love.update(dt)
         -- math.max returns the greater of two values; 0 and player Y
         -- will ensure we don't go above it
         player1Y = math.max(0, player1Y + -PADDLE_SPEED * dt)
+        print(player1Y)
     elseif love.keyboard.isDown('s') then
         -- add positive paddle speed to current Y scaled by deltaTime
         -- math.min returns the lesser of two values; bottom of the egde minus paddle height
         -- and player Y will ensure we don't go below it
         player1Y = math.min(VIRTUAL_HEIGHT - 20, player1Y + PADDLE_SPEED * dt)
+        print(player1Y)
     end
 
     -- player 2 movement
@@ -111,6 +113,7 @@ function love.update(dt)
         ballX = ballX + ballDX * dt
         ballY = ballY + ballDY * dt
     end
+    
 end
 
 --[[
@@ -134,7 +137,7 @@ function love.keypressed(key)
             ballX = VIRTUAL_WIDTH / 2 - 2
             ballY = VIRTUAL_HEIGHT / 2 - 2
 
-            -- given ball's x and y velocity a random starting value
+            -- given ball's x and y velocity a random starting value(Velocity)
             -- the and/or pattern here is Lua's way of accomplishing a ternary operation
             -- in other programming languages like C
             ballDX = math.random(2) == 1 and 100 or -100
@@ -142,6 +145,7 @@ function love.keypressed(key)
         end
     end
 end
+
 
 --[[
     Called after update by LÖVE2D, used to draw anything to the screen, 

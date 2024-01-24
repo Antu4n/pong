@@ -110,7 +110,7 @@ function love.update(dt)
         -- on player who last scored
         ball.dy = math.random(-50, 50)
         if servingPlayer == 1 then
-            ball.dx = math.random(140, 200)
+            ball.dx = math.random(140, 200) -- initialize a x velocity..
         else
             ball.dx = -math.random(140, 200)
         end
